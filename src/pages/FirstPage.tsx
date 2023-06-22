@@ -8,7 +8,7 @@ export const FirstPage = () => {
   const mixpanel: OverridedMixpanel = useContext(MixpanelContext);
 
   const handleClick = (event: React.MouseEvent) => {
-    mixpanel.track_pageview();
+    // mixpanel.track_pageview();
     mixpanel.track(`Clicked ${(event.target as Element).className}`, {
       test: "test",
     });
