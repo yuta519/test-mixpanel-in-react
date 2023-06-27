@@ -16,14 +16,17 @@ const router = createBrowserRouter([
 
 // Set this to a unique identifier for the user performing the event.
 // eg: their ID in your database or their email address.
-mixpanel.init(import.meta.env.VITE_MIXPANEL_PROJECT_ID, { debug: true });
+mixpanel.init(import.meta.env.VITE_MIXPANEL_PROJECT_ID, {
+  debug: true,
+  track_pageview: true,
+});
 
 // Track an event. It can be anything, but in this example, we're tracking a Signed Up event.
 // Include a property about the signup, like the Signup Type
 // mixpanel.track("Signed Up", {
 //   "Signup Type": "Referral",
 // });
-mixpanel.identify("max@example.com");
+mixpanel.identify("jane@example.com");
 
 export const MixpanelContext = createContext<OverridedMixpanel>(mixpanel);
 
